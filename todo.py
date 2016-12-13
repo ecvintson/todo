@@ -11,3 +11,17 @@ def loadList():
 	with open('save.pickle', 'rb') as handle:
 		listLoad = pickle.load(handle)
 		return listLoad
+
+def helloWorld():
+	print "Hello World!!"
+
+commands = {
+	'hello': helloWorld
+}
+
+
+print "To Do List 0.1"
+
+uComm= raw_input()
+
+commands[uComm]()
