@@ -19,6 +19,7 @@ def helloWorld():
 	print "Hello World!!"
 
 def quitCommand():
+	#add confirmation/save function
 	quit()	
 
 def addList():
@@ -35,6 +36,9 @@ def remList():
 def helpCommand():
 	#temporary, fix
 	print commands
+
+def saveCommand():
+	print "placeholder"
 
 #library of commands, calling functions
 commands = {
