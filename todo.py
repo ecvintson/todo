@@ -1,5 +1,11 @@
 import pickle
 
+#variables
+theList = []
+global spltStr 
+spltStr = []
+global hasSplit
+hasSplit = False
 
 #pickle save/load functions
 def saveList():
@@ -11,34 +17,45 @@ def loadList():
 		listLoad = pickle.load(handle)
 		return listLoad
 
-#list to hold To Do items
-theList = ["first", "second"]
+
 
 # Functions that are called by user inputs
 def helloWorld():
 	print "Hello World!!"
 
 def quitCommand():
-	#add confirmation/save function
-	quit()	
+	while True:
+		print "Are you sure you want to quit? (y/n)"
+		x = raw_input()
+		if x == "y":
+			quit()
+		elif x == "n":
+			break
+		else:
+			print "Invalid input"	
 
 def addList():
-	x = raw_input()
-	theList.append(x)
-	print theList
+	if hasSplit == True:
+		theList.append(spltStr[1])
+		print theList
+		hasSplit == False
+	else:
+		x = raw_input()
+		theList.append(x)
+
 
 def printList():
 	print theList
 
 def remList():
-	print "placeholder"
+	pass
 
 def helpCommand():
-	#temporary, fix
-	print commands
+	#temporary, need to make look nicer
+	print commands.keys()
 
 def saveCommand():
-	print "placeholder"
+	pass
 
 #library of commands, calling functions
 commands = {
@@ -59,4 +76,13 @@ print "To Do List 0.2.1"
 #main loop
 while True:
 	uComm= raw_input()
-	commands[uComm]()
+	
+	if " " in uComm:
+		spltStr = uComm.split(' ', 1)
+		hasSplit = True
+		commands[spltStr[0]]()
+
+	else:
+		commands[uComm]()
+	# add loop to check to make sure input matches a command 
+	# (or a default in dictionary?)
