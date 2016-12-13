@@ -71,7 +71,6 @@ commands = {
 
 
 
-print "To Do List 0.2.1"
 
 #main loop
 while True:
@@ -85,4 +84,4 @@ while True:
 	else:
 		commands[uComm]()
 	# add loop to check to make sure input matches a command 
-	# (or a default in dictionary?)
+	# (or add a default functionality in dictionary?)
