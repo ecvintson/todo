@@ -1,8 +1,5 @@
 import pickle
 
-# Will be a program for writing to-do lists. Will save lists in a pickle file, and 
-# pull them back out
-
 
 #pickle save/load functions
 def saveList():
@@ -27,12 +24,17 @@ def quitCommand():
 def addList():
 	x = raw_input()
 	theList.append(x)
+	print theList
 
 def printList():
 	print theList
 
 def remList():
+	print "placeholder"
 
+def helpCommand():
+	#temporary, fix
+	print commands
 
 #library of commands, calling functions
 commands = {
@@ -41,15 +43,16 @@ commands = {
 	'add': addList,
 	'remove': remList,
 	'save': 4,
-	'quit': quitCommand
+	'quit': quitCommand,
+	'help': helpCommand
 }
 
 
 
 
-print "To Do List 0.2"
+print "To Do List 0.2.1"
 
-
+#main loop
 while True:
 	uComm= raw_input()
 	commands[uComm]()
