@@ -38,7 +38,7 @@ def addList():
 	if hasSplit == True:
 		theList.append(spltStr[1])
 		print theList
-		hasSplit == False
+
 	else:
 		x = raw_input()
 		theList.append(x)
@@ -47,6 +47,7 @@ def addList():
 def printList():
 	print theList
 
+#will allow user to remove items from the list
 def remList():
 	pass
 
@@ -54,6 +55,7 @@ def helpCommand():
 	#temporary, need to make look nicer
 	print commands.keys()
 
+#will save list 
 def saveCommand():
 	pass
 
@@ -71,17 +73,18 @@ commands = {
 
 
 
-print "To Do List 0.3.2"
+print "To Do List 0.4.0"
 
 #main loop
 while True:
+	spltStr = []
 	uComm= raw_input()
 	
 	if " " in uComm:
 		spltStr = uComm.split(' ', 1)
 		hasSplit = True
 		commands[spltStr[0]]()
-
+		hasSplit = False
 	else:
 		commands[uComm]()
 	# add loop to check to make sure input matches a command 
