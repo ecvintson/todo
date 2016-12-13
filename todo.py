@@ -71,6 +71,7 @@ commands = {
 
 
 
+print "To Do List 0.3.2"
 
 #main loop
 while True:
