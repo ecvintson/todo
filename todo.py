@@ -1,6 +1,6 @@
 import pickle
 
-print "To Do List 0.5.0"
+print "To Do List 0.5.1"
 
 #variables
 theList = []
@@ -91,5 +91,3 @@ while True:
 			commands[uComm]() #otherwise simply pass the input through the dictionary
 	except KeyError:
 		print ("'" + uComm + "'" + " is not a valid input. Type 'help' for a list of commands.")
-	# need to add loop to check to make sure input matches a command 
-	# (or add a default functionality in dictionary?)
