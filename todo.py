@@ -1,5 +1,7 @@
 import pickle
 
+print "To Do List 0.4.1"
+
 #variables
 theList = []
 global spltStr 
@@ -65,7 +67,7 @@ commands = {
 	'list': printList,
 	'add': addList,
 	'remove': remList,
-	'save': 4,
+	'save': saveCommand,
 	'quit': quitCommand,
 	'help': helpCommand
 }
@@ -73,19 +75,20 @@ commands = {
 
 
 
-print "To Do List 0.4.0"
+
 
 #main loop
 while True:
 	spltStr = []
 	uComm= raw_input()
 	
-	if " " in uComm:
-		spltStr = uComm.split(' ', 1)
+	if " " in uComm: #if user input a command, followed by some text
+		spltStr = uComm.split(' ', 1) #split the command from the rest of the text into a list
 		hasSplit = True
-		commands[spltStr[0]]()
+		commands[spltStr[0]]() #pass the command through the dictionary
 		hasSplit = False
 	else:
-		commands[uComm]()
-	# add loop to check to make sure input matches a command 
+		commands[uComm]() #otherwise simply pass the input through the dictionary
+	
+	# need to add loop to check to make sure input matches a command 
 	# (or add a default functionality in dictionary?)
