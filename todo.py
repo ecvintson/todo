@@ -1,6 +1,5 @@
 import pickle
 
-print "To Do List 0.5.1"
 
 #variables
 theList = []
