@@ -12,7 +12,7 @@ hasSplit = False
 #pickle save/load functions
 def saveList():
 	with open('save.pickle', 'wb') as handle:
-		pickle.dump(todoList, handle)
+		pickle.dump(theList, handle)
 
 def loadList():
 	with open('save.pickle', 'rb') as handle:
@@ -59,7 +59,7 @@ def helpCommand():
 
 #will save list 
 def saveCommand():
-	pass
+	saveList()
 
 #library of commands, calling functions
 commands = {
@@ -73,9 +73,11 @@ commands = {
 }
 
 
-
-
-
+#attempts to load list, if save file does not exist, creates it
+try:
+	theList = loadList()
+except IOError:
+	saveList()
 
 #main loop
 while True:
