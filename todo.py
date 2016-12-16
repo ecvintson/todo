@@ -1,6 +1,6 @@
 import pickle
 
-print "To Do List 0.6.1"
+print "To Do List 0.7.0"
 
 #variables
 theList = []
@@ -24,7 +24,7 @@ def loadList():
 # Functions that are called by user inputs
 def helloWorld():
 	print "Hello World!!"
-
+# need to add autosave on quit
 def quitCommand():
 	while True:
 		print "Are you sure you want to quit? (y/n)"
@@ -51,7 +51,10 @@ def printList():
 
 #will allow user to remove items from the list
 def remList():
-	pass
+	remint = raw_input()
+	remint = int(remint)
+	remint = remint - 1
+	del theList[remint]
 
 def helpCommand():
 	#temporary, need to make look nicer
