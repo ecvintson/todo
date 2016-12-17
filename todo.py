@@ -1,6 +1,6 @@
 import pickle
 
-print "To Do List 0.7.0"
+print "To Do List 0.8.0"
 
 #variables
 theList = []
@@ -47,7 +47,13 @@ def addList():
 
 
 def printList():
-	print theList
+	x = len(theList)
+	x = x-1
+	i = 0
+	while i<=x:
+		y = str(i + 1)
+		print (y + " " + theList[i])
+		i = i +1
 
 #will allow user to remove items from the list
 def remList():
