@@ -30,6 +30,7 @@ def quitCommand():
 		print "Are you sure you want to quit? (y/n)"
 		x = raw_input()
 		if x == "y":
+			saveCommand()
 			quit()
 		elif x == "n":
 			break
